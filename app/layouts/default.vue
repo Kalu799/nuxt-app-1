@@ -8,6 +8,8 @@
       <NuxtLink to="/apropos">A propos</NuxtLink>
       |
       <NuxtLink to="/fruits">Fruits</NuxtLink>
+      |
+      <NuxtLink to="/activites">Activitées</NuxtLink>
     </nav>
   </header>
 
