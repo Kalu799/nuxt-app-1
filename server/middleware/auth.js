@@ -2,6 +2,8 @@
 
 // exécuté automatiquement à chaque requête
 
+import { userState } from "../utils/state"
+
 export default defineEventHandler((event) => {
   const url = getRequestURL(event)
 
