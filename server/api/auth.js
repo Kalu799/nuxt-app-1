@@ -13,13 +13,16 @@ export default defineEventHandler(async (event) => {
 
   try {
 
-    const [rows] = await db.query('SELECT * FROM users WHERE login= ? AND pass= ?', [body.login, body.pass])
+    const [rows] = await db.query('SELECT * FROM users WHERE login= ? AND pass= ?', [login, pass])
 
     if (rows.length > 0) {
-      const token = useCookie('api_token', {
-        maxAge: 60 * 60 * 24 * 7 // Valide 7 jours
+      const tokenValue = rows[0].id + rows[0].login
+      setCookie(event, 'api_token', tokenValue, {
+        maxAge: 60 * 60 * 24 * 7, // Valide 7 jours
+        httpOnly: true,
+        path: '/'
       })
-      token.value = rows[0].id + rows[0].login
+      return {succes: true, message: 'Connexion réussie'}
     }
     else {
       return {message : 'pas ok'}
