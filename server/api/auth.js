@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
         httpOnly: true,
         path: '/'
       })
-      return {succes: true, message: 'Connexion réussie'}
+      return {succes: true, message: 'Connexion réussie', token: tokenValue}
     }
     else {
       return {message : 'pas ok'}
