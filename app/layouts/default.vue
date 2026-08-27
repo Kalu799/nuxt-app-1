@@ -6,6 +6,8 @@
       <NuxtLink to="/">Home</NuxtLink>
       |
       <NuxtLink to="/apropos">A propos</NuxtLink>
+      |
+      <NuxtLink to="/fruits">Fruits</NuxtLink>
     </nav>
   </header>
 
