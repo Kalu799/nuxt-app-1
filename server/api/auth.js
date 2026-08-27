@@ -1,3 +1,5 @@
+import { userState } from "../utils/state"
+
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
 
@@ -22,6 +24,7 @@ export default defineEventHandler(async (event) => {
         httpOnly: true,
         path: '/'
       })
+      userState.token = tokenValue
       return {succes: true, message: 'Connexion réussie', token: tokenValue}
     }
     else {

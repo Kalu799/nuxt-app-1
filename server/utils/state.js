@@ -8,3 +8,7 @@ export const fruitsState = [
     label: "Bananes"
   }
 ]
+
+export const userState = {
+  token: ''
+}
