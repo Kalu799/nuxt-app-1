@@ -16,10 +16,9 @@ const addFruit = async () => {
 
 const delFruit = async (id) => {
   if (confirm('Sùr ?')) {
-    const newFruit = await $fetch(`/api/fruits/${id}`, {
+    const deletedFruit = await $fetch(`/api/fruits/${id}`, {
       method: "DELETE",
     })
-    //console.log(newFruit)
     await refresh()
   }
 }
