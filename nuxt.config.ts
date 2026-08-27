@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     dhHost: 'srv660.hstgr.io',
     dbPort: 3306,
     dbUser: 'u868520261_nuxt',
-    dbName: 'u868520261_nuxt',
+    dbName: 'u868520261_ingrwf13',
     dbPassword: 'NuxtCepegra11!'
   }
 })
