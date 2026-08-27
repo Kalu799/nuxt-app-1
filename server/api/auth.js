@@ -12,10 +12,16 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
+
     const [rows] = await db.query('SELECT * FROM users WHERE login= ? AND pass= ?', [body.login, body.pass])
+
     if (rows.length > 0) {
-      return {token : rows[0].id + rows[0].login}
-    } else {
+      const token = useCookie('api_token', {
+        maxAge: 60 * 60 * 24 * 7 // Valide 7 jours
+      })
+      token.value = rows[0].id + rows[0].login
+    }
+    else {
       return {message : 'pas ok'}
     }
   }
