@@ -14,9 +14,9 @@ export default defineEventHandler(async (event) => {
   try {
     const [rows] = await db.query('SELECT * FROM users WHERE login= ? AND pass= ?', [body.login, body.pass])
     if (rows.length > 0) {
-      return ('ok')
+      return {message : 'ok'}
     } else {
-      return ('pas ok')
+      return {message : 'pas ok'}
     }
   }
   catch (error) {
