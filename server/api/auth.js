@@ -1,4 +1,4 @@
-//import { userState } from "../utils/state"
+import { userState } from "../utils/state"
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
